@@ -1,0 +1,253 @@
+/* General Reset */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffb347;
+}
+
+.logo img {
+  height: 50px;
+}
+/* Header */
+header {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header input {
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #ffc107;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffc107;
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #ff9800;
+}
+
+.btn.secondary {
+  background-color: white;
+  color: black;
+}
+
+.btn.secondary:hover {
+  background-color: #ddd;
+}
+
+/* Image Slider Container */
+.slider-container {
+  max-width: 1200px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: auto;
+  padding-top: 10px;
+}
+
+/* Slider Track */
+.slider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slide */
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Slide Images */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures full coverage without distortion */
+  border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(7, 7, 6, 0.6);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s ease-in-out;
+}
+
+.prev {
+  left: 15px;
+}
+.next {
+  right: 15px;
+}
+
+/* Venue Container */
+.venue-container {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fffbe0;
+  border: 2px solid #e88206;
+}
+
+/* Venue Details */
+.venue-details {
+  width: 60%;
+  padding: 20px;
+}
+
+/* Rating Section (Inside Venue Details) */
+.rating-section {
+  background: #fffbe0;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 100px;
+  border: 2px solid #e88206;
+}
+.star-rating {
+  display: flex;
+  justify-content: center;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 30px;
+  color: rgb(214, 178, 178);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: gold;
+}
+.rating-section input {
+  padding: 8px;
+  width: 90%;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.rating-section button {
+  background: #ff9800;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.rating-section button:hover {
+  background: #e68900;
+}
+
+/* Booking Section */
+.booking-section {
+  width: 35%;
+  padding: 20px;
+  background: #fffbe0;
+  border: 2px solid #ffb347;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.booking-section h3 {
+  text-align: center;
+}
+
+.booking-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-section label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.booking-section input,
+.booking-section select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.booking-section button {
+  background: #ff9800;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.booking-section button:hover {
+  background: #e68900;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .venue-container {
+    flex-direction: column;
+  }
+  .venue-details,
+  .booking-section {
+    width: 100%;
+  }
+}

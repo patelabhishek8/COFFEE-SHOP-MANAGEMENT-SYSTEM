@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #d8dbdb;
+    background-size: cover; /* Ensures the image covers the whole screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repetition */
+    background-attachment: fixed; /* Keeps it fixed while scrolling */
+  }
+  
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #368eeb, #2c23d2);
+    padding: 12px 20px;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    color: #ffc107;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .search-box {
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  /* Venue Listings */
+  .venue-section {
+    background: #ffffff;
+    margin-top: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  .top {
+    font-size: 50px;
+    text-align: center;
+    margin-left: auto;
+    font-weight: bold;
+    color: #1372d1;
+    text-decoration: underline solid;
+    text-decoration-color: #3261d7;
+    margin-bottom: 10px;
+  }
+  .venue {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa; /* Light Gray */
+    border-radius: 10px;
+    margin-left: 45px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .venue:hover {
+    transform: scale(1.02);
+  }
+  
+  .venue img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+  }
+  
+  .venue h5 {
+    margin-bottom: 5px;
+    color: #007bff;
+  }
+  
+  .venue p {
+    margin: 3px 0;
+    color: #555;
+  }
+  
+  .venue button {
+    margin-top: 10px;
+  }
+  
+  /* Advertisements */
+  .advertisements {
+    background-color: #fff3cd; /* Light Yellow */
+    border-left: 5px solid #ff9800;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 85px;
+  }
+  
+  .advertisements img {
+    width: 100%;
+    height: fit-content;
+  }

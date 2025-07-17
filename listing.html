@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venue Listing Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="..\CSS\listing.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="form-panel">
+        <h2 class="text-center mb-4">List Your Venue</h2>
+        <form
+          action="../PHP/listing.php"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Business Details -->
+          <h5 class="section-title">Business Details</h5>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Business Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="business_name"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Pincode</label>
+              <input
+                type="text"
+                class="form-control"
+                name="pincode"
+                pattern="[0-9]{6}"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Street / Colony Name</label>
+              <input type="text" class="form-control" name="street" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">City</label>
+              <select class="form-select" name="city" required>
+                <option value="">Select City</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Vadodara">Vadodara</option>
+                <option value="Surat">Surat</option>
+                <option value="Rajkot">Rajkot</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">State</label>
+              <input
+                type="text"
+                class="form-control"
+                name="state"
+                value="Gujarat"
+                readonly
+              />
+            </div>
+          </div>
+
+          <!-- Contact Details -->
+          <h5 class="section-title mt-4">Contact Details</h5>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Contact Person</label>
+              <input
+                type="text"
+                class="form-control"
+                name="contact_person"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Mobile Number</label>
+              <div class="input-group">
+                <span class="input-group-text">+91</span>
+                <input
+                  type="tel"
+                  class="form-control"
+                  name="mobile"
+                  pattern="[6-9]{1}[0-9]{9}"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Price per Event (INR)</label>
+              <input
+                type="text"
+                class="form-control"
+                name="price"
+                min="1000"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Business Time Section -->
+          <h5 class="section-title mt-4">Business Time</h5>
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <label class="form-label">Select Operating Days</label>
+              <div class="d-flex flex-wrap">
+                <div class="form-check me-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="days[]"
+                    value="Monday"
+                  />
+                  <label class="form-check-label">Monday</label>
+                </div>
+                <div class="form-check me-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="days[]"
+                    value="Tuesday"
+                  />
+                  <label class="form-check-label">Tuesday</label>
+                </div>
+                <div class="form-check me-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="days[]"
+                    value="Wednesday"
+                  />
+                  <label class="form-check-label">Wednesday</label>
+                </div>
+                <div class="form-check me-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="days[]"
+                    value="Thursday"
+                  />
+                  <label class="form-check-label">Thursday</label>
+                </div>
+                <div class="form-check me-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="days[]"
+                    value="Friday"
+                  />
+                  <label class="form-check-label">Friday</label>
+                </div>
+                <div class="form-check me-3">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="days[]"
+                    value="Saturday"
+                  />
+                  <label class="form-check-label">Saturday</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="days[]"
+                    value="Sunday"
+                  />
+                  <label class="form-check-label">Sunday</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Opening Time</label>
+              <input
+                type="time"
+                class="form-control"
+                name="opening_time"
+                required
+              />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Closing Time</label>
+              <input
+                type="time"
+                class="form-control"
+                name="closing_time"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Venue Details -->
+          <h5 class="section-title mt-4">Venue Details</h5>
+          <label class="form-label">Select Venue Type</label>
+          <div class="d-flex flex-wrap">
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="venue_types[]"
+                value="Banquet Hall"
+              />
+              <label class="form-check-label">Banquet Hall</label>
+            </div>
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="venue_types[]"
+                value="Conference Room"
+              />
+              <label class="form-check-label">Conference Room</label>
+            </div>
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="venue_types[]"
+                value="Outdoor Space"
+              />
+              <label class="form-check-label">Outdoor Space</label>
+            </div>
+            <div class="form-check me-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="venue_types[]"
+                value="Resort"
+              />
+              <label class="form-check-label">Resort</label>
+            </div>
+          </div>
+
+          <!-- Facilities & Amenities -->
+          <h5 class="section-title mt-4">Facilities & Amenities</h5>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <input type="checkbox" name="facilities[]" value="Parking" />
+              <label>Parking Available</label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="checkbox" name="facilities[]" value="AC" />
+              <label>Air Conditioning</label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="checkbox" name="facilities[]" value="Catering" />
+              <label>Catering Services</label>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="checkbox" name="facilities[]" value="WiFi" />
+              <label>WiFi Facility</label>
+            </div>
+          </div>
+
+          <!-- Membership Plan -->
+          <h5 class="section-title mt-4">Membership Plan</h5>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="membership"
+                  value="Silver"
+                  required
+                />
+                <label class="form-check-label"
+                  >Silver Membership - ₹1000/year</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="membership"
+                  value="Gold"
+                />
+                <label class="form-check-label"
+                  >Gold Membership - ₹5000/year</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="membership"
+                  value="Platinum"
+                />
+                <label class="form-check-label"
+                  >Platinum Membership - ₹10,000/year</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Photo Upload -->
+          <h5 class="section-title mt-4">Upload Photos</h5>
+          <div class="mb-3 text-center">
+            <label for="photoUpload" class="upload-box">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/748/748113.png"
+                alt="Upload Icon"
+                width="40"
+              />
+              <p class="mt-2">Add Photos</p>
+            </label>
+            <input
+              type="file"
+              id="photoUpload"
+              name="venue_photos[]"
+              class="d-none"
+              accept="image/*"
+              multiple
+            />
+            <div
+              id="previewContainer"
+              class="mt-2 d-flex flex-wrap gap-2"
+            ></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mt-3">
+            Save & Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/listing.js"></script>
+  </body>
+</html>
